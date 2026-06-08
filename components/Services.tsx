@@ -1,21 +1,32 @@
+import {
+  Globe,
+  Code2,
+  ShoppingBag,
+  Rocket,
+} from "lucide-react";
+
 export default function Services() {
   const services = [
     {
+      icon: Globe,
       title: "WordPress Development",
       description:
         "Modern business websites, job boards, dashboards, and CMS systems built with scalability in mind.",
     },
     {
+      icon: Code2,
       title: "Next.js Frontend",
       description:
         "Fast frontend systems with clean UI, responsive layouts, and modern architecture.",
     },
     {
+      icon: ShoppingBag,
       title: "Shopify Ecommerce",
       description:
         "Conversion-focused ecommerce stores designed for trust, speed, and better customer experience.",
     },
     {
+      icon: Rocket,
       title: "Bubble MVP Development",
       description:
         "Startup MVPs and SaaS platforms built quickly for testing, launching, and validating ideas.",
@@ -40,22 +51,28 @@ export default function Services() {
       </div>
 
       <div className="grid md:grid-cols-2 gap-5">
-        {services.map((service) => (
-          <div
-            key={service.title}
-            className="border border-white/10 bg-white/[0.03] rounded-3xl p-7 hover:border-blue-500/30 transition"
-          >
-            <div className="w-12 h-12 rounded-2xl bg-blue-500/10 border border-blue-500/20 mb-7"></div>
+        {services.map((service) => {
+          const Icon = service.icon;
 
-            <h3 className="text-xl font-semibold mb-3">
-              {service.title}
-            </h3>
+          return (
+            <div
+              key={service.title}
+              className="border border-white/10 bg-white/[0.03] rounded-3xl p-7 hover:border-blue-500/30 transition"
+            >
+              <div className="w-14 h-14 rounded-2xl bg-blue-500/10 border border-blue-500/20 mb-6 flex items-center justify-center">
+                <Icon size={24} className="text-blue-400" />
+              </div>
 
-            <p className="text-slate-400 leading-relaxed text-sm">
-              {service.description}
-            </p>
-          </div>
-        ))}
+              <h3 className="text-xl font-semibold mb-3">
+                {service.title}
+              </h3>
+
+              <p className="text-slate-400 leading-relaxed text-sm">
+                {service.description}
+              </p>
+            </div>
+          );
+        })}
       </div>
     </section>
   );
