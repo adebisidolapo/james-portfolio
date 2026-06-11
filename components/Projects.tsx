@@ -47,9 +47,19 @@ export default function Projects() {
               )}
             </div>
 
-            <button className="bg-blue-600 hover:bg-blue-500 transition px-6 py-3 rounded-full font-medium">
-              View Project
-            </button>
+   <div className="flex gap-4">
+  <button
+    className="bg-blue-600 hover:bg-blue-500 transition px-6 py-3 rounded-full font-medium"
+  >
+    Project Overview
+  </button>
+
+  <button
+    className="border border-white/10 hover:border-blue-500 transition px-6 py-3 rounded-full font-medium"
+  >
+    Recruitment Platform
+  </button>
+</div>
           </div>
 
           <div className="relative min-h-[500px] bg-[#0B1220]">
@@ -101,7 +111,7 @@ function ProjectCard({
   description: string;
 }) {
   return (
-    <div className="border border-white/10 rounded-[28px] overflow-hidden bg-white/[0.03] hover:border-blue-500/30 transition">
+    <div className="border border-white/10 rounded-[28px] overflow-hidden bg-white/[0.03] hover:border-blue-500/40 hover:-translate-y-1 transition duration-300">
       <div className="relative h-[260px]">
         <Image src={image} alt={title} fill className="object-cover" />
       </div>
@@ -113,7 +123,45 @@ function ProjectCard({
 
         <h3 className="text-2xl font-bold mb-4">{title}</h3>
 
-        <p className="text-slate-400 text-sm leading-relaxed">{description}</p>
+        <p className="text-slate-400 text-sm leading-relaxed mb-6">
+          {description}
+        </p>
+
+<div className="space-y-4">
+
+  <div className="flex flex-wrap gap-2">
+
+    <span className="text-xs px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-300">
+      Responsive
+    </span>
+
+    <span className="text-xs px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-300">
+      UI/UX
+    </span>
+
+    <span className="text-xs px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-300">
+      Conversion Focused
+    </span>
+
+  </div>
+
+  <div className="flex gap-3">
+
+    <button
+      className="bg-blue-600 hover:bg-blue-500 transition px-4 py-2 rounded-full text-sm"
+    >
+      Project Overview
+    </button>
+
+    <button
+      className="border border-white/10 hover:border-blue-500 transition px-4 py-2 rounded-full text-sm"
+    >
+      Design Showcase
+    </button>
+
+  </div>
+
+</div>
       </div>
     </div>
   );
